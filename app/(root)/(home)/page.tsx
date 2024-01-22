@@ -25,7 +25,15 @@ export default async function Home() {
               <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
                 {resources?.length > 0 ? (
                   resources.map((resource: any) => (
-                    <ResourceCard />
+                    <ResourceCard 
+                  key={resource}
+                  title={resource.title}
+                  id={resource._id}
+                  image={resource.image}
+                  downloadNumber={resource.views}
+                  slug={resource._id}
+                  downloadLink={resource.downloadLink}
+                />
                   ))
                 ) : (
                   <p className="body-regultar text-white-400">
